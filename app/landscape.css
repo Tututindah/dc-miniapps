@@ -1,0 +1,293 @@
+/* Force Landscape Orientation for Game */
+
+/* Root container - landscape optimized */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile landscape detection and optimization */
+@media screen and (max-width: 812px) and (orientation: portrait) {
+  /* Show rotation prompt on portrait mode */
+  .landscape-prompt {
+    display: flex !important;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: system-ui, -apple-system, sans-serif;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .landscape-prompt svg {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 2rem;
+    animation: rotate-phone 2s ease-in-out infinite;
+  }
+
+  .landscape-prompt h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .landscape-prompt p {
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+
+  @keyframes rotate-phone {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(90deg);
+    }
+  }
+
+  /* Hide game content in portrait */
+  #__next > div:not(.landscape-prompt) {
+    display: none !important;
+  }
+}
+
+/* Landscape mode - show game */
+@media screen and (orientation: landscape) {
+  .landscape-prompt {
+    display: none !important;
+  }
+
+  /* Optimize for landscape layout */
+  #__next {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Game containers stretch to full viewport */
+  .game-container {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+  }
+
+  /* Canvas and WebGL containers */
+  canvas {
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+  }
+
+  /* WASMGame specific */
+  .wasm-game-wrapper {
+    aspect-ratio: 16/9;
+    width: 100%;
+    max-height: 100vh;
+  }
+}
+
+/* Desktop - always landscape optimized */
+@media screen and (min-width: 813px) {
+  .landscape-prompt {
+    display: none !important;
+  }
+
+  /* Wider layout for desktop */
+  .game-container {
+    max-width: 100vw;
+    margin: 0 auto;
+  }
+
+  /* Side panels for landscape layout */
+  .game-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 100vh;
+  }
+
+  .game-main {
+    flex: 1;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+/* Utility classes for landscape layout */
+.landscape-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.landscape-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.landscape-flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+
+/* Prevent scroll on game screens */
+.no-scroll {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Cartoonish dragon styles - smooth, colorful, not pixelated */
+.dragon-sprite {
+  image-rendering: auto;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: saturate(1.2) contrast(1.1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove pixelation from dragon renders */
+.dragon-render,
+.dragon-model,
+.dragon-avatar {
+  image-rendering: auto !important;
+  -ms-interpolation-mode: bicubic;
+  filter: saturate(1.3) brightness(1.05);
+}
+
+/* Smooth scaling for dragon animations */
+.dragon-animated {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.dragon-animated:hover {
+  transform: scale(1.1) translateY(-5px);
+}
+
+/* Cartoonish shadows for depth */
+.dragon-shadow {
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3))
+          drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* Vibrant color boost for cartoon style */
+.dragon-vibrant {
+  filter: saturate(1.4) contrast(1.15) brightness(1.05);
+}
+
+/* Performance optimizations for landscape mode */
+@media screen and (orientation: landscape) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Enable GPU acceleration */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Smooth 60fps animations */
+  @keyframes float-dragon {
+    0%, 100% {
+      transform: translateY(0px) translateZ(0);
+    }
+    50% {
+      transform: translateY(-10px) translateZ(0);
+    }
+  }
+
+  .dragon-floating {
+    animation: float-dragon 3s ease-in-out infinite;
+  }
+}
+
+/* Clash of Clans style village improvements */
+.village-isometric {
+  perspective: 800px;
+  perspective-origin: 50% 30%;
+}
+
+.building-isometric {
+  transform-style: preserve-3d;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.building-isometric:hover {
+  transform: scale(1.1) translateY(-10px) rotateX(5deg);
+  filter: brightness(1.2);
+}
+
+/* Building shadows - isometric style */
+.building-shadow {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 20px;
+  background: radial-gradient(ellipse at center, 
+    rgba(0, 0, 0, 0.5) 0%, 
+    rgba(0, 0, 0, 0.3) 40%, 
+    transparent 70%);
+  filter: blur(8px);
+  z-index: -1;
+}
+
+/* Grass and terrain textures */
+.terrain-grass {
+  background-image: 
+    linear-gradient(45deg, rgba(76, 175, 80, 0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(76, 175, 80, 0.1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(76, 175, 80, 0.1) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(76, 175, 80, 0.1) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Path/road texture */
+.terrain-path {
+  background: linear-gradient(90deg, 
+    #8B7355 0%, 
+    #A0826D 20%, 
+    #8B7355 40%, 
+    #A0826D 60%, 
+    #8B7355 80%, 
+    #A0826D 100%);
+  position: relative;
+}
+
+.terrain-path::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(0, 0, 0, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 70% 60%, rgba(0, 0, 0, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 40% 80%, rgba(0, 0, 0, 0.1) 2px, transparent 2px);
+  background-size: 30px 30px;
+  opacity: 0.5;
+}

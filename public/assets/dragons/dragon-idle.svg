@@ -1,0 +1,47 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dragon Idle Sprite - Blue Dragon -->
+  <defs>
+    <radialGradient id="dragonGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Body -->
+  <ellipse cx="64" cy="80" rx="30" ry="25" fill="url(#dragonGrad)" stroke="#1e40af" stroke-width="2"/>
+  
+  <!-- Head -->
+  <circle cx="64" cy="50" r="22" fill="url(#dragonGrad)" stroke="#1e40af" stroke-width="2"/>
+  
+  <!-- Eyes -->
+  <circle cx="56" cy="48" r="4" fill="#fbbf24"/>
+  <circle cx="72" cy="48" r="4" fill="#fbbf24"/>
+  <circle cx="57" cy="47" r="2" fill="#000"/>
+  <circle cx="73" cy="47" r="2" fill="#000"/>
+  
+  <!-- Horns -->
+  <path d="M 52 38 L 48 28 L 54 36" fill="#ef4444" stroke="#991b1b" stroke-width="1.5"/>
+  <path d="M 76 38 L 80 28 L 74 36" fill="#ef4444" stroke="#991b1b" stroke-width="1.5"/>
+  
+  <!-- Wings -->
+  <path d="M 40 70 L 20 60 L 25 75 L 35 78 Z" fill="#818cf8" stroke="#4f46e5" stroke-width="1.5" opacity="0.8"/>
+  <path d="M 88 70 L 108 60 L 103 75 L 93 78 Z" fill="#818cf8" stroke="#4f46e5" stroke-width="1.5" opacity="0.8"/>
+  
+  <!-- Tail -->
+  <path d="M 38 90 Q 20 95 15 110" stroke="#3b82f6" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M 15 110 L 10 105 L 18 108 L 12 113 Z" fill="#ef4444"/>
+  
+  <!-- Legs -->
+  <rect x="52" y="100" width="8" height="20" rx="4" fill="url(#dragonGrad)" stroke="#1e40af" stroke-width="1.5"/>
+  <rect x="68" y="100" width="8" height="20" rx="4" fill="url(#dragonGrad)" stroke="#1e40af" stroke-width="1.5"/>
+  
+  <!-- Feet -->
+  <ellipse cx="56" cy="122" rx="6" ry="3" fill="#1e40af"/>
+  <ellipse cx="72" cy="122" rx="6" ry="3" fill="#1e40af"/>
+  
+  <!-- Belly -->
+  <ellipse cx="64" cy="82" rx="18" ry="15" fill="#dbeafe" opacity="0.6"/>
+  
+  <!-- Nose -->
+  <ellipse cx="64" cy="58" rx="4" ry="3" fill="#1e40af"/>
+</svg>

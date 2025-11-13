@@ -1,0 +1,16 @@
+{
+  "version": "1",
+  "name": "Dragon City",
+  "description": "Breed, battle, and collect pixel art dragons on Base & Celo",
+  "imageUrl": "https://reda-hoarse-refinedly.ngrok-free.dev/assets/buildings/castle.png",
+  "button": {
+    "title": "Play Dragon City",
+    "action": {
+      "type": "launch_miniapp",
+      "url": "https://reda-hoarse-refinedly.ngrok-free.dev",
+      "name": "Dragon City",
+      "splashImageUrl": "https://reda-hoarse-refinedly.ngrok-free.dev/assets/buildings/castle.png",
+      "splashBackgroundColor": "#1e1b4b"
+    }
+  }
+}

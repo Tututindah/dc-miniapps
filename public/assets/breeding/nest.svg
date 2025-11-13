@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150">
+  <!-- Nest base -->
+  <ellipse cx="100" cy="120" rx="90" ry="25" fill="#654321" opacity="0.3"/>
+  
+  <!-- Nest twigs -->
+  <path d="M 20 110 Q 30 100 40 110 T 60 110 T 80 110 T 100 110 T 120 110 T 140 110 T 160 110 T 180 110" 
+        stroke="#8B4513" stroke-width="3" fill="none"/>
+  <path d="M 25 100 Q 35 90 45 100 T 65 100 T 85 100 T 105 100 T 125 100 T 145 100 T 165 100 T 185 100" 
+        stroke="#A0522D" stroke-width="3" fill="none"/>
+  <path d="M 30 90 Q 40 80 50 90 T 70 90 T 90 90 T 110 90 T 130 90 T 150 90 T 170 90" 
+        stroke="#8B4513" stroke-width="3" fill="none"/>
+  
+  <!-- Nest bowl -->
+  <ellipse cx="100" cy="110" rx="80" ry="30" fill="#D2691E"/>
+  <ellipse cx="100" cy="110" rx="75" ry="27" fill="#CD853F"/>
+  <ellipse cx="100" cy="115" rx="70" ry="20" fill="#F4A460"/>
+  
+  <!-- Inner nest -->
+  <ellipse cx="100" cy="120" rx="60" ry="15" fill="#DEB887"/>
+  <ellipse cx="100" cy="122" rx="55" ry="12" fill="#F5DEB3"/>
+  
+  <!-- Straw details -->
+  <line x1="40" y1="95" x2="45" y2="105" stroke="#8B4513" stroke-width="2"/>
+  <line x1="60" y1="90" x2="62" y2="100" stroke="#A0522D" stroke-width="2"/>
+  <line x1="80" y1="92" x2="85" y2="102" stroke="#8B4513" stroke-width="2"/>
+  <line x1="120" y1="92" x2="115" y2="102" stroke="#A0522D" stroke-width="2"/>
+  <line x1="140" y1="90" x2="138" y2="100" stroke="#8B4513" stroke-width="2"/>
+  <line x1="160" y1="95" x2="155" y2="105" stroke="#A0522D" stroke-width="2"/>
+</svg>

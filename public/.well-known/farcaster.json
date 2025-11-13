@@ -1,0 +1,26 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "Dragon City",
+    "iconUrl": "https://reda-hoarse-refinedly.ngrok-free.dev/assets/buildings/castle.png",
+    "homeUrl": "https://reda-hoarse-refinedly.ngrok-free.dev",
+    "imageUrl": "https://reda-hoarse-refinedly.ngrok-free.dev/assets/buildings/castle.png",
+    "buttonTitle": "Play Dragon City",
+    "splashImageUrl": "https://reda-hoarse-refinedly.ngrok-free.dev/assets/buildings/castle.png",
+    "splashBackgroundColor": "#1e1b4b",
+    "description": "Breed, battle, and collect pixel art dragons on Base & Celo",
+    "requiredChains": [
+      "eip155:8453",
+      "eip155:42220"
+    ],
+    "requiredCapabilities": [
+      "actions.signIn",
+      "wallet.getEthereumProvider"
+    ]
+  }
+}

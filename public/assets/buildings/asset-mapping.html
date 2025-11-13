@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Mapping Guide - Village Buildings</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .card h2 {
+            font-size: 1.5em;
+            margin-top: 0;
+            color: #ffd700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        .image-box {
+            background: rgba(255,255,255,0.9);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-weight: bold;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .arrow {
+            font-size: 2em;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .output {
+            background: rgba(76, 175, 80, 0.3);
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 5px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .steps {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .steps ol {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .highlight {
+            background: rgba(255,215,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        code {
+            background: rgba(0,0,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>🏰 Village Building Asset Mapping</h1>
+    <p style="text-align: center; font-size: 1.2em;">
+        Gunakan <span class="highlight">3 PNG images</span> Anda untuk 
+        <span class="highlight">5 building types</span>
+    </p>
+
+    <div class="container">
+        <!-- Image 1 Card -->
+        <div class="card">
+            <h2>📦 Image 1: Farm House</h2>
+            <div class="image-box">
+                🏠 Rumah Kayu<br>dengan Atap Cokelat
+            </div>
+            <div class="arrow">⬇️</div>
+            <div class="output">✅ castle.png</div>
+            <div class="output">✅ farm.png</div>
+            <p><strong>Untuk:</strong></p>
+            <ul>
+                <li>Collection Building</li>
+                <li>Hatchery/Farm</li>
+            </ul>
+        </div>
+
+        <!-- Image 2 Card -->
+        <div class="card">
+            <h2>🏰 Image 2: Grand Castle</h2>
+            <div class="image-box">
+                🏰 Kastil Megah<br>dengan Banyak Menara
+            </div>
+            <div class="arrow">⬇️</div>
+            <div class="output">✅ fortress.png</div>
+            <div class="output">✅ tower.png</div>
+            <p><strong>Untuk:</strong></p>
+            <ul>
+                <li>Battle Arena</li>
+                <li>Training Tower</li>
+            </ul>
+        </div>
+
+        <!-- Image 3 Card -->
+        <div class="card">
+            <h2>🏪 Image 3: Market Shop</h2>
+            <div class="image-box">
+                🏪 Kedai Kayu<br>dengan Counter
+            </div>
+            <div class="arrow">⬇️</div>
+            <div class="output">✅ temple.png</div>
+            <p><strong>Untuk:</strong></p>
+            <ul>
+                <li>Marketplace</li>
+                <li>Breeding Temple</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="steps">
+        <h2>📋 Langkah Setup</h2>
+        <ol>
+            <li>Simpan 3 PNG dari attachment dengan nama:
+                <ul>
+                    <li><code>image1.png</code> (rumah kayu)</li>
+                    <li><code>image2.png</code> (kastil megah)</li>
+                    <li><code>image3.png</code> (kedai)</li>
+                </ul>
+            </li>
+            <li>Letakkan di folder: <code>public/assets/buildings/</code></li>
+            <li>Jalankan script auto-copy:
+                <ul>
+                    <li>Windows: Double-click <code>setup-assets.bat</code></li>
+                    <li>PowerShell: <code>.\setup-assets.ps1</code></li>
+                </ul>
+            </li>
+            <li>Script akan auto-create 5 files:
+                <ul>
+                    <li>✅ castle.png (copy dari image1)</li>
+                    <li>✅ farm.png (copy dari image1)</li>
+                    <li>✅ fortress.png (copy dari image2)</li>
+                    <li>✅ tower.png (copy dari image2)</li>
+                    <li>✅ temple.png (copy dari image3)</li>
+                </ul>
+            </li>
+            <li>Buka browser game dan refresh <span class="highlight">Ctrl+Shift+R</span></li>
+            <li>Check console (F12) untuk texture loading logs</li>
+            <li>Jalan ke kanan (D) sampai x=50-80 untuk lihat village!</li>
+        </ol>
+    </div>
+
+    <div class="steps">
+        <h2>🎯 Expected Console Output</h2>
+        <pre style="background: rgba(0,0,0,0.5); padding: 15px; border-radius: 8px; overflow-x: auto;"><code>[Texture] ✅ Loaded castle.png (WIDTHxHEIGHT) -> ID 1
+[Texture] ✅ Loaded fortress.png (WIDTHxHEIGHT) -> ID 2
+[Texture] ✅ Loaded farm.png (WIDTHxHEIGHT) -> ID 3
+[Texture] ✅ Loaded tower.png (WIDTHxHEIGHT) -> ID 4
+[Texture] ✅ Loaded temple.png (WIDTHxHEIGHT) -> ID 5
+[C++] 🖼️ Village textures loaded successfully!</code></pre>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; opacity: 0.8;">
+        <p>Jika file tidak ditemukan, game akan tampilkan colored cube fallback</p>
+        <p style="font-size: 0.9em;">Created for Dragon City Mini App 🐉</p>
+    </div>
+</body>
+</html>

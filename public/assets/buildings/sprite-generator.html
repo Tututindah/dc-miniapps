@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Building Sprite Generator</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        canvas { border: 1px solid #ccc; margin: 10px; display: inline-block; }
+        .section { margin: 20px 0; }
+        button { padding: 10px 20px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Village Building Sprite Generator</h1>
+    <p>Right-click each canvas and "Save Image As" to download PNG sprites</p>
+    
+    <div class="section">
+        <h2>Castle (256x384px)</h2>
+        <canvas id="castle" width="256" height="384"></canvas>
+    </div>
+    
+    <div class="section">
+        <h2>Fortress (224x320px)</h2>
+        <canvas id="fortress" width="224" height="320"></canvas>
+    </div>
+    
+    <div class="section">
+        <h2>Farm (192x192px)</h2>
+        <canvas id="farm" width="192" height="192"></canvas>
+    </div>
+    
+    <div class="section">
+        <h2>Tower (96x448px)</h2>
+        <canvas id="tower" width="96" height="448"></canvas>
+    </div>
+    
+    <div class="section">
+        <h2>Temple (224x320px)</h2>
+        <canvas id="temple" width="224" height="320"></canvas>
+    </div>
+    
+    <script>
+        // Castle
+        const castleCtx = document.getElementById('castle').getContext('2d');
+        castleCtx.fillStyle = '#8B8B8B';
+        castleCtx.fillRect(32, 128, 192, 256); // Main wall
+        castleCtx.fillStyle = '#6B6B6B';
+        castleCtx.fillRect(32, 128, 192, 32); // Top
+        // Towers
+        castleCtx.fillStyle = '#7B7B7B';
+        castleCtx.fillRect(0, 64, 64, 320);
+        castleCtx.fillRect(192, 64, 64, 320);
+        // Crenellations
+        castleCtx.fillStyle = '#5B5B5B';
+        for (let x = 0; x < 256; x += 32) {
+            castleCtx.fillRect(x, 96, 16, 32);
+        }
+        // Door
+        castleCtx.fillStyle = '#3B2814';
+        castleCtx.fillRect(96, 288, 64, 96);
+        // Windows
+        castleCtx.fillStyle = '#4B6B9B';
+        castleCtx.fillRect(64, 200, 24, 32);
+        castleCtx.fillRect(168, 200, 24, 32);
+        
+        // Fortress
+        const fortressCtx = document.getElementById('fortress').getContext('2d');
+        fortressCtx.fillStyle = '#6B6B6B';
+        fortressCtx.fillRect(16, 96, 192, 224);
+        fortressCtx.fillStyle = '#4B4B4B';
+        fortressCtx.fillRect(16, 96, 192, 32);
+        fortressCtx.fillStyle = '#3B2814';
+        fortressCtx.fillRect(80, 240, 64, 80);
+        fortressCtx.fillStyle = '#4B6B9B';
+        for (let y = 140; y < 240; y += 50) {
+            fortressCtx.fillRect(32, y, 20, 24);
+            fortressCtx.fillRect(172, y, 20, 24);
+        }
+        
+        // Farm
+        const farmCtx = document.getElementById('farm').getContext('2d');
+        farmCtx.fillStyle = '#8B5A3C';
+        farmCtx.fillRect(16, 64, 160, 128);
+        farmCtx.fillStyle = '#6B3A2C';
+        // Roof
+        farmCtx.beginPath();
+        farmCtx.moveTo(96, 16);
+        farmCtx.lineTo(16, 64);
+        farmCtx.lineTo(176, 64);
+        farmCtx.closePath();
+        farmCtx.fill();
+        // Door
+        farmCtx.fillStyle = '#3B2814';
+        farmCtx.fillRect(80, 128, 32, 64);
+        // Windows
+        farmCtx.fillStyle = '#FFEB3B';
+        farmCtx.fillRect(32, 96, 24, 24);
+        farmCtx.fillRect(136, 96, 24, 24);
+        
+        // Tower
+        const towerCtx = document.getElementById('tower').getContext('2d');
+        towerCtx.fillStyle = '#5B5B5B';
+        towerCtx.fillRect(16, 64, 64, 384);
+        towerCtx.fillStyle = '#4B4B4B';
+        towerCtx.fillRect(0, 32, 96, 32);
+        // Flag
+        towerCtx.fillStyle = '#8B2814';
+        towerCtx.fillRect(40, 0, 4, 40);
+        towerCtx.fillStyle = '#CB2814';
+        towerCtx.fillRect(44, 8, 32, 20);
+        // Windows
+        towerCtx.fillStyle = '#4B6B9B';
+        for (let y = 120; y < 400; y += 80) {
+            towerCtx.fillRect(32, y, 16, 20);
+        }
+        
+        // Temple
+        const templeCtx = document.getElementById('temple').getContext('2d');
+        templeCtx.fillStyle = '#E8E8E8';
+        templeCtx.fillRect(32, 96, 160, 224);
+        // Roof
+        templeCtx.fillStyle = '#D4AF37';
+        templeCtx.beginPath();
+        templeCtx.moveTo(112, 32);
+        templeCtx.lineTo(16, 96);
+        templeCtx.lineTo(208, 96);
+        templeCtx.closePath();
+        templeCtx.fill();
+        // Pillars
+        templeCtx.fillStyle = '#F8F8F8';
+        templeCtx.fillRect(48, 128, 16, 192);
+        templeCtx.fillRect(104, 128, 16, 192);
+        templeCtx.fillRect(160, 128, 16, 192);
+        // Door
+        templeCtx.fillStyle = '#3B2814';
+        templeCtx.fillRect(88, 240, 48, 80);
+        
+        console.log('Sprites generated! Right-click each canvas and save as PNG');
+    </script>
+</body>
+</html>
