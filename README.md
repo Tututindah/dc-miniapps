@@ -5,7 +5,7 @@ A cross-chain dragon breeding and battling game built as a Farcaster mini app. C
 ![Dragon City](https://img.shields.io/badge/Built%20with-Next.js%2014-black?style=for-the-badge&logo=next.js)
 ![Solidity](https://img.shields.io/badge/Solidity-0.8.20-363636?style=for-the-badge&logo=solidity)
 ![Farcaster](https://img.shields.io/badge/Farcaster-Frame-8A63D2?style=for-the-badge)
-
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
 ## ✨ Features
 
 ### 🎨 Pixelated Dragons
