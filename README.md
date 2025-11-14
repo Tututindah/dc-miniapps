@@ -1,6 +1,6 @@
 # Dragon City - Farcaster Mini App
 
-A cross-chain dragon breeding & battling game built as a **Farcaster Mini App**. Collect pixelated dragons, breed across **Base** and **Celo**, and battle asynchronously with stunning 60 FPS attack animations.
+A cross-chain game built as a **Farcaster Mini App**. Collect pixelated dragons, breed across **Base** and **Celo**, and battle asynchronously with stunning gameplay and social connect.
 
 ---
 
